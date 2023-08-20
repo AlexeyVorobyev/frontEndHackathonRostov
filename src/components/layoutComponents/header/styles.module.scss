@@ -1,0 +1,60 @@
+.header {
+  background: #CEC1B1;
+  padding: 17px 70px 15px 70px;
+  font-family: Jost, 'sans-serif';
+
+  .mainWrapper {
+    margin: auto;
+    max-width: 1600px;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      color: #39405A;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .navigationContainer {
+      margin-left: auto;
+      gap: 30px;
+      align-items: center;
+      display: flex;
+
+      .link {
+        color: #FFF;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+
+        &:hover {
+          color: #EEE;
+        }
+      }
+    }
+
+    .navigationProfileContainer {
+      margin-left: 200px;
+      gap: 15px;
+      align-items: center;
+      display: flex;
+
+      .link {
+        color: #FFF;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+
+        &:hover {
+          color: #EEE;
+        }
+      }
+    }
+  }
+}
