@@ -43,6 +43,30 @@
       align-items: center;
       display: flex;
 
+      .circle {
+        width: 30px;
+        height: 30px;
+        background: #39405A;
+        overflow: hidden;
+        border-radius: 30px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .text {
+          color: #FFF;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+      .svg:hover {
+        cursor: pointer;
+      }
+
       .link {
         color: #FFF;
         font-size: 15px;

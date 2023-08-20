@@ -1,5 +1,2 @@
-export default function RegistrPage() {
-    return (
-        <div>registr page</div>
-    )
-}
+import Registration from "@/components/screens/registration/Registration";
+export default function RegistrationPage() {return <Registration/>}

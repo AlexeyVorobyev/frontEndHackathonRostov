@@ -1,11 +1,11 @@
-'use client'
-
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {reducer as templateReducer} from "./template/template.slice";
+import {reducer as userReducer} from "./user/user.slice";
 import {api} from "../api/api";
 
 const reducers = combineReducers({
     template:templateReducer,
+    user:userReducer,
     [api.reducerPath]: api.reducer
 })
 export const store = configureStore({
