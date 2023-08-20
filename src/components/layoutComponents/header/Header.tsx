@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 import {userState} from "@/redux/store/user/user.slice";
 import exitSvg from './assets/exit.svg'
 import {useActions} from "@/redux/hooks/useActions";
+import {RootState} from "@/redux/store/store";
 export default function Header() {
 
     const user:userState = useSelector((state: RootState) => state.user);

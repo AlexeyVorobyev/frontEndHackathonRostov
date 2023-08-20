@@ -10,6 +10,7 @@ import classNames from "classnames";
 import {useActions} from "@/redux/hooks/useActions";
 import {useSelector} from "react-redux";
 import { useRouter } from 'next/navigation';
+import {RootState} from "@/redux/store/store";
 
 export default function Registration() {
 
