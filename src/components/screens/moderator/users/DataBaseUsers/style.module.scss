@@ -1,0 +1,233 @@
+.dataBaseJobs {
+  width: 100%;
+}
+
+.dataBase {
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.07), 0px 7px 14px 0px rgba(65, 69, 88, 0.10);
+  padding: 16px 0 8px 0;
+  border-radius: 6px;
+  background: #FFF;
+
+  .dataBaseHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20px 16px 20px;
+
+    .dataBaseTitle {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+    }
+
+    .dataBaseSelectorContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap:25px;
+
+      .dataBaseSelectorName {
+        color: #748194;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 16px;
+      }
+    }
+
+    .navLink {
+      text-decoration: none;
+    }
+
+    .dataBaseButtonAdd {
+      width: 170px;
+      height: 30px;
+      border-radius: 3px;
+      background-color: #00D27B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:5px;
+
+      .dataBaseButtonAddText {
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19px;
+        color:white;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+
+  .dataBaseRows {
+
+    .dataBaseRowInfo {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.5fr;
+      justify-content: space-between;
+      justify-items: left;
+      align-items: center;
+      padding: 10px 20px 10px 20px;
+      background-color: #EDF2F8;
+
+      .infoLabelContainerClickable {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .infoLabelContainer:nth-child(6) {
+        justify-self: center;
+      }
+
+      .infoLabelContainer {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        position: relative;
+
+        .dataBaseSwitcherSvg {
+          position: absolute;
+          right:-15px;
+        }
+
+        .dataBaseSwitcherOverlaySvg {
+          position: absolute;
+          right:-15px;
+          z-index: 100;
+        }
+
+        .infoLabelText {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 17px;
+          user-select: none;
+        }
+      }
+    }
+
+    .dataBaseRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.5fr;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 8px 20px 8px 20px;
+      border-bottom: 1px solid rgba(116, 129, 148, 0.25);
+      justify-items: left;
+
+      .rowElemLink {
+        text-decoration: none;
+        color: #2A7BE4;
+      }
+
+      .rowElem {
+        display: flex;
+        align-items: center;
+
+        .rowElemSvg {
+          width: 18px;
+          height: 18px;
+        }
+
+        .rowElemSvgAction {
+          width: 18px;
+          height: 18px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .rowElem:nth-child(6) {
+        gap: 10px;
+        justify-self: center;
+      }
+    }
+  }
+
+  .dataBaseButtonsContainer{
+    display: flex;
+    justify-content: space-between;
+    padding:8px 40px 0px 40px;
+    align-items: center;
+
+    .buttonsWrapper {
+      display: flex;
+      gap:8px;
+
+      .dataBaseSkeleton {
+        width: 42px;
+        height:38px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+
+        .dataBaseSkeletonText {
+          font-size: 40px;
+          line-height: 40px;
+        }
+      }
+
+      .dataBaseButton {
+        width: 40px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        border: 1px solid #FFF;
+        box-shadow: 0px 0px 0px 1px rgba(43, 45, 80, 0.10), 0px 2px 5px 0px rgba(43, 45, 80, 0.08), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07), 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.active {
+          background-color: #FFF;
+        }
+
+        &.disActive {
+          background-color: #FFF;
+        }
+
+        .dataBaseButtonText {
+          font-size: 20px;
+
+          &.disActive {
+            color: #0B1828;
+          }
+
+          &.active {
+            color: #2A7BE4;
+          }
+        }
+      }
+    }
+  }
+
+  .dataBaseButtonMore {
+    display: block;
+    width: fit-content;
+    text-align: right;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom: 8px;
+    margin-left:auto;
+    color: #2A7BE4;
+    font-size: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

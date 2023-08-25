@@ -11,9 +11,8 @@ export const LayoutProvider = ({ children } : {children : React.ReactNode}) => {
     const pathname = usePathname();
     return (
         <>
-            {pathname !== "/registration" && <Header/>}
+            {pathname !== "/" && <Header/>}
             {children}
-            {pathname !== "/registration" && <Footer/>}
         </>
     )
 };

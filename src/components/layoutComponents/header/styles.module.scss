@@ -1,5 +1,5 @@
 .header {
-  background: #CEC1B1;
+  background: #EBEBEB;
   padding: 17px 70px 15px 70px;
   font-family: Jost, 'sans-serif';
 
@@ -8,9 +8,10 @@
     max-width: 1600px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .logo {
-      color: #39405A;
+      color: #2B8ADE;
       font-size: 30px;
       font-style: normal;
       font-weight: 600;
@@ -18,13 +19,12 @@
     }
 
     .navigationContainer {
-      margin-left: auto;
       gap: 30px;
       align-items: center;
       display: flex;
 
       .link {
-        color: #FFF;
+        color: #878787;
         font-size: 15px;
         font-style: normal;
         font-weight: 400;
@@ -32,13 +32,16 @@
         text-decoration: none;
 
         &:hover {
-          color: #EEE;
+          color: #A9A9A9;
         }
+      }
+
+      .activeLink {
+        color: #2B8ADE;
       }
     }
 
     .navigationProfileContainer {
-      margin-left: 200px;
       gap: 15px;
       align-items: center;
       display: flex;
@@ -68,7 +71,7 @@
       }
 
       .link {
-        color: #FFF;
+        color: #878787;
         font-size: 15px;
         font-style: normal;
         font-weight: 400;
@@ -76,7 +79,7 @@
         text-decoration: none;
 
         &:hover {
-          color: #EEE;
+          color: #2B8ADE;
         }
       }
     }

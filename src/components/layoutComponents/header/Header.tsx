@@ -7,26 +7,41 @@ import {userState} from "@/redux/store/user/user.slice";
 import exitSvg from './assets/exit.svg'
 import {useActions} from "@/redux/hooks/useActions";
 import {RootState} from "@/redux/store/store";
+import React from "react";
+import {usePathname, useRouter} from "next/navigation";
+import classNames from "classnames";
 export default function Header() {
 
     const user:userState = useSelector((state: RootState) => state.user);
     const {userLogOut} = useActions();
+    const router = useRouter();
+    const pathname = usePathname();
     console.log(user);
+
+    React.useEffect(() => {
+        if (!user.isAuth) {
+            router.push("/")
+        }
+    },[user.isAuth])
 
     return (
     <div className={styles.header}>
         <div className={styles.mainWrapper}>
-            <h1 className={styles.logo}>FUTURE</h1>
+            <h1 className={styles.logo}>SOUP</h1>
             <nav className={styles.navigationContainer}>
-                <Link className={styles.link} href={"./null"}>Ценовая политика</Link>
-                <Link className={styles.link} href={"./null"}>О нас</Link>
-                <Link className={styles.link} href={"./null"}>Помощь эксперта</Link>
-                <Link className={styles.link} href={"./null"}>Контакты</Link>
+                <Link
+                    className={classNames(styles.link,pathname === `/moderator/routes` ? styles.activeLink : "" )}
+                    href={`/moderator/routes`}
+                >Мероприятия</Link>
+                <Link
+                    className={classNames(styles.link,pathname === `/moderator/users` ? styles.activeLink : "" )}
+                    href={`/moderator/users`}
+                >Пользователи</Link>
             </nav>
             {!user.isAuth && <nav className={styles.navigationProfileContainer}>
                 <Link className={styles.link} href={"./null"}>Вход</Link>
                 <Image className={styles.svg} src={verticalLine} alt={"|"}/>
-                <Link className={styles.link} href={"./registration"}>Регистрация</Link>
+                <Link className={styles.link} href={"./logIn"}>Регистрация</Link>
             </nav>}
             {user.isAuth && <nav className={styles.navigationProfileContainer}>
                 <div className={styles.circle}>

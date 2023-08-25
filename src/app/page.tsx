@@ -1,4 +1,4 @@
 import Link from "next/link";
-import Landing from "@/components/screens/landing/Landing";
+import LogIn from "@/components/screens/login/LogIn";
 
-export default function LandingPage() {return <Landing/>}
+export default function LandingPage() {return <LogIn/>}
