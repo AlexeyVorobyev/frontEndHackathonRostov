@@ -76,6 +76,8 @@ $infoGridPadding:25px;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      height: 100%;
+      box-sizing: border-box;
 
       .headerContainer {
         justify-content: space-between;

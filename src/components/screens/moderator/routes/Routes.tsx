@@ -7,6 +7,7 @@ import React from "react";
 import classNames from "classnames";
 import {ChartDoughnut} from './ChartDoughnut/ChartDoughnut'
 import { LineChart } from '@mui/x-charts/LineChart';
+import RouteEdit from "@/components/screens/moderator/routes/RouteEdit/RouteEdit";
 
 export default function Routes() {
 
@@ -14,7 +15,7 @@ export default function Routes() {
         return (
             <div className={styles.deletePopupWrapper}>
                 <div className={styles.deletePopup}>
-                    <p className={styles.paragraph}>Are you sure about deleting this job?</p>
+                    <p className={styles.paragraph}>Вы уверены что хотите удалить это мероприятие?</p>
                     <div className={styles.buttonsWrapper}>
                         <div
                             className={styles.deletePopupButton}
@@ -23,13 +24,13 @@ export default function Routes() {
                                 document.body.style.overflowY = "visible";
                             }}
                         >
-                            <p className={styles.deletePopupButtonText}>Cancel</p>
+                            <p className={styles.deletePopupButtonText}>Отмена</p>
                         </div>
                         <div
                             className={styles.deletePopupButton}
                             onClick={handler.callback}
                         >
-                            <p className={styles.deletePopupButtonText}>Delete</p>
+                            <p className={styles.deletePopupButtonText}>Удалить</p>
                         </div>
                     </div>
                 </div>
@@ -58,8 +59,8 @@ export default function Routes() {
                                 data: [2, 5.5, 15, 8.5, 1.5, 5,8],
                             },
                         ]}
-                        width={900}
-                        height={250}
+                        width={1000}
+                        height={350}
                     />
                 </div>
             </div>
@@ -69,12 +70,14 @@ export default function Routes() {
                     <p className={styles.header}>Сезонный спрос</p>
                 </div>
                 <div className={styles.diagram}>
-                    <ChartDoughnut quanityArr={[1,2]}/>
+                    <ChartDoughnut quanityArr={[10,20]}/>
                 </div>
             </div>
 
             {isRenderDeletePopup && <DeletePopup handler={deletePopupHandler} setIsRenderDeletePopup={setIsRenderDeletePopup}/>}
             <DataBaseRoutes setDeletePopupHandler={setDeletePopupHandler} setIsRenderDeletePopup={setIsRenderDeletePopup}/>
+
+            <RouteEdit/>
         </div>
     </main>
     )

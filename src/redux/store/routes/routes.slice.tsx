@@ -9,6 +9,7 @@ export interface Route {
 export interface RoutesState {
     dataBase:Array<Route>
     rawDataBase:Array<Route>
+    selectedRouteId:number
     count:number
     dataBasePage:number
     defaultPageSize:number,
@@ -109,6 +110,7 @@ const initialState:RoutesState = {
     rawDataBase:routesRawData,
     count:routesRawData.length,
     dataBasePage:1,
+    selectedRouteId:1,
     defaultPageSize:5,
     sortParam: {
         name:{num:0,parameter:["","name","-name"]},
@@ -179,11 +181,31 @@ export const routesSlice = createSlice({
             state.count = state.rawDataBase.filter((item) => item.season.includes(state.selectParam.season)).length
             state.dataBase = routesArr;
         },
+        routesAddElem: (state, {payload}) => {
+            console.log(payload)
+            state.rawDataBase = [...state.rawDataBase,payload.item]
+        },
         routesSetDataBasePage: (state,{payload}) => {
             state.dataBasePage = payload.dataBasePage
         },
         routesDeleteDataRoute: (state, {payload}) => {
             state.rawDataBase = state.rawDataBase.filter((item) => item.id !== payload.id)
+        },
+        routesUpdateDataRoute: (state,{payload}) => {
+            let newArr = state.rawDataBase.map((elem) => elem);
+            newArr = newArr.map((elem:Route) => {
+                if (elem.id === payload.id) {
+                    elem.name = payload.name;
+                    elem.season = payload.season
+                    return elem
+                }
+                else return elem
+            })
+            console.log(newArr)
+            state.rawDataBase = newArr
+        },
+        routesUpdateId: (state,{payload}) => {
+            state.selectedRouteId = payload.id
         }
     }
 })

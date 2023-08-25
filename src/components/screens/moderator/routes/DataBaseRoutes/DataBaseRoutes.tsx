@@ -21,6 +21,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {Route} from "@/redux/store/routes/routes.slice";
 import {routesRawData} from "@/redux/store/routes/routes.slice";
+import {random} from "nanoid";
+import {randomInt} from "crypto";
 
 const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDeletePopupHandler:any,setIsRenderDeletePopup:any}) => {
     const DataBaseRow = ({data}: {data:Route}) => {
@@ -31,13 +33,12 @@ const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDel
         return (
             <>
                 <div className={styles.dataBaseRow}>
-                    <Link
+                    <div
                         className={classNames(styles.rowElem,styles.rowElemLink)}
-                        href={`routes/${data.id}?id=${data.id}`}
-                        // state={{jobId:data.id}}
+                        onClick={() =>  routesUpdateId({id:data.id})}
                     >
                         <p className={styles.rowElemText}>{data.name}</p>
-                    </Link>
+                    </div>
                     <div className={styles.rowElem}>
                         <p className={styles.rowElemText}>{data.updatedAt}</p>
                     </div>
@@ -50,14 +51,24 @@ const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDel
                         <p className={styles.rowElemText}>{data.status}</p>
                     </div>
                     <div className={styles.rowElem}>
-                        <Image src={dataBaseActionEditSvg} alt={""} className={styles.rowElemSvgAction}/>
+                        <Image
+                            src={dataBaseActionEditSvg}
+                            alt={""}
+                            className={styles.rowElemSvgAction}
+                            onClick={() =>  routesUpdateId({id:data.id})}
+                        />
                         <Image
                             src={dataBaseActionCopySvg}
                             alt={""}
                             className={styles.rowElemSvgAction}
                             onClick={() => {
                                 const searchRoute = routes.dataBase.filter((job:Route) => job.id === data.id);
-                                // createJob(searchJob[0]);
+                                function getRandomInt(max:number) {
+                                    return Math.floor(Math.random() * max);
+                                }
+                                const item = {...searchRoute[0]}
+                                item.id = getRandomInt(10000);
+                                routesAddElem({item:item})
                             }}
                         />
                         <Image src={dataBaseActionDeleteSvg}
@@ -158,7 +169,9 @@ const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDel
         routesSetData,
         routesDeleteDataRoute,
         routesSetSortName,
-        routesSetSelectSeason
+        routesSetSelectSeason,
+        routesAddElem,
+        routesUpdateId
     } = useActions();
 
     // const {data,error,isLoading,isFetching,isSuccess} = useGetJobsQuery(
@@ -238,7 +251,7 @@ const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDel
                 >
                     <button className={styles.dataBaseButtonAdd}>
                         <Image src={dataBaseButtonAddSvg} alt={""} className={styles.dataBaseButtonAddSvg}/>
-                        <p className={styles.dataBaseButtonAddText}>Новый маршрут</p>
+                        <p className={styles.dataBaseButtonAddText}>Новое мероприятие</p>
                     </button>
                 </Link>
             </div>

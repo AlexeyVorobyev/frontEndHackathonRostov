@@ -130,6 +130,10 @@
       .rowElemLink {
         text-decoration: none;
         color: #2A7BE4;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .rowElem {
