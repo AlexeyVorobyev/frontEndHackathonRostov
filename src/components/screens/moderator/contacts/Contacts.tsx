@@ -6,7 +6,7 @@ import vano from './assets/vano.png'
 import sofia from './assets/sofia.png'
 import kitkat from './assets/kitkat.png'
 import nastyapotap from './assets/nastyapotap.jpg'
-import kotya from './assets/kotya.jpg'
+import kotya from './assets/dude.jpg'
 import tiger from './assets/tiger.jpg'
 import Image from "next/image";
 export const Contacts = () => {

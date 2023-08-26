@@ -61,7 +61,7 @@ export const routesRawData:Array<Route> = [
     },
     {
         id:5,
-        name:"Корольевский завтрак",
+        name:"Королевский завтрак",
         updatedAt:(new Date()).toLocaleString(),
         season:"s23",
         status:"working",
