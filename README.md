@@ -32,3 +32,43 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Описание структуры репозитория:
+
+src: корневая папка с данными для сборки
+
+src/app - роутер next.js
+
+src/components - различные компоненты
+
+components/layoytComponents - компоненты для лэйаута(тпа хедер, футер и т.д)
+
+components/screens - основные страницы (login,moderator)
+
+screens/moderator - подразделы для модератора (cabinet,contacts,routes,users)
+
+components/ui-elements - компоненты из mateial ui (select)
+
+src/redux - папка, где находится логика работы REDUX
+
+redux/api - апи
+
+redux/store - настройки хранилищ
+
+redux/hooks - кастомные хуки
+
+## Сделанные фишки:
+
+1.Логин - имитация залогирования
+
+2.Работа с БД мероприятий - сортировка по названию, пагинация, удаление, копирование, редактирование, добавление, выборка по сезону.
+
+3.Работа с БД пользователи - только пагинация :(
+
+4.Личный кабинет - возможность изменить часть данных о себе
+
+5.ГЛАВНОЕ - НЕ ОБНОВЛЯЙТЕ СТРАНИЦУ ИНАЧЕ ВСЁ СЛЕТИТ БЕКА НЕЕЕЕТ :< :<
+  
+ 
+
