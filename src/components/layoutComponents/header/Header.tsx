@@ -37,6 +37,10 @@ export default function Header() {
                     className={classNames(styles.link,pathname === `/moderator/users` ? styles.activeLink : "" )}
                     href={`/moderator/users`}
                 >Пользователи</Link>
+                <Link
+                    className={classNames(styles.link,pathname === `/moderator/contacts` ? styles.activeLink : "" )}
+                    href={`/moderator/contacts`}
+                >Контакты AVENIR</Link>
             </nav>
             {!user.isAuth && <nav className={styles.navigationProfileContainer}>
                 <Link className={styles.link} href={"./null"}>Вход</Link>
@@ -48,7 +52,7 @@ export default function Header() {
                     <p className={styles.text}>{user.name.substring(0,2).toUpperCase()}</p>
                 </div>
                 <Link
-                    className={styles.link}
+                    className={classNames(styles.link,pathname === `/moderator/cabinet` ? styles.activeLink : "" )}
                     href={"./cabinet"}
                 >{user.name}</Link>
                 <Image

@@ -8,10 +8,11 @@ import classNames from "classnames";
 import {ChartDoughnut} from './ChartDoughnut/ChartDoughnut'
 import { LineChart } from '@mui/x-charts/LineChart';
 import RouteEdit from "@/components/screens/moderator/routes/RouteEdit/RouteEdit";
+import {AddPopup} from "@/components/screens/moderator/routes/AddPopup/AddPopup";
 
 export default function Routes() {
 
-    const DeletePopup = ({handler, setIsRenderDeletePopup} : {handler:any, setIsRenderDeletePopup:any}) => {
+    const DeletePopup = ({handler, setIsRenderDeletePopup} : {handler:any, setIsRenderDeletePopup:Function}) => {
         return (
             <div className={styles.deletePopupWrapper}>
                 <div className={styles.deletePopup}>
@@ -37,6 +38,9 @@ export default function Routes() {
             </div>
         )
     }
+
+
+    const [isRenderAddPopup,setIsRenderAddPopup] = React.useState(false)
 
     const [isRenderDeletePopup,setIsRenderDeletePopup] = React.useState(false);
     const [deletePopupHandler,setDeletePopupHandler] = React.useState({
@@ -75,7 +79,8 @@ export default function Routes() {
             </div>
 
             {isRenderDeletePopup && <DeletePopup handler={deletePopupHandler} setIsRenderDeletePopup={setIsRenderDeletePopup}/>}
-            <DataBaseRoutes setDeletePopupHandler={setDeletePopupHandler} setIsRenderDeletePopup={setIsRenderDeletePopup}/>
+            {isRenderAddPopup && <AddPopup setIsRenderAddPopup={setIsRenderAddPopup}/>}
+            <DataBaseRoutes setDeletePopupHandler={setDeletePopupHandler} setIsRenderDeletePopup={setIsRenderDeletePopup} setIsRenderAddPopup={setIsRenderAddPopup}/>
 
             <RouteEdit/>
         </div>

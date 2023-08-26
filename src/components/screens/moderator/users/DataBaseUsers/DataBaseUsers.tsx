@@ -30,27 +30,23 @@ const DataBaseUsers = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDele
         return (
             <>
                 <div className={styles.dataBaseRow}>
-                    <Link
+                    <div
                         className={classNames(styles.rowElem,styles.rowElemLink)}
-                        href={`users/${data.id}?id=${data.id}`}
                         // state={{jobId:data.id}}
                     >
                         <p className={styles.rowElemText}>{data.name}</p>
-                    </Link>
-                    <div className={styles.rowElem}>
-                        <p className={styles.rowElemText}>{data.updatedAt}</p>
                     </div>
                     <div className={styles.rowElem}>
-                        <Image src={dataBaseSeasonSunSvg} alt={""} className={styles.rowElemSvg}/>
-                        <p className={styles.rowElemText}>{data.season}</p>
+                        <p className={styles.rowElemText}>{data.registrDate}</p>
                     </div>
                     <div className={styles.rowElem}>
-                        <Image src={dataBaseSeasonSunSvg} alt={""} className={styles.rowElemSvg}/>
-                        <p className={styles.rowElemText}>{data.status}</p>
+                        <p className={styles.rowElemText}>{data.email}</p>
                     </div>
                     <div className={styles.rowElem}>
-                        <Image src={dataBaseSeasonSunSvg} alt={""} className={styles.rowElemSvg}/>
-                        <p className={styles.rowElemText}>{"admin"}</p>
+                        <p className={styles.rowElemText}>{data.id}</p>
+                    </div>
+                    <div className={styles.rowElem}>
+                        <p className={styles.rowElemText}>{data.role}</p>
                     </div>
                     <div className={styles.rowElem}>
                         <Image src={dataBaseActionEditSvg} alt={""} className={styles.rowElemSvgAction}/>
@@ -181,67 +177,67 @@ const DataBaseUsers = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDele
         <div className={classNames(styles.dataBase,styles.dataBaseJobs)}>
             <div className={styles.dataBaseHeader}>
                 <h2 className={styles.dataBaseTitle}>Пользователи</h2>
-                <div className={styles.dataBaseSelectorContainer}>
-                    <p className={styles.dataBaseSelectorName}>Сезон</p>
-                    <BasicSelect
-                        idSelect={"seasonSelect"}
-                        items={[
-                            {
-                                name:"All",
-                                value:""
-                            },
-                            {
-                                name:"W23",
-                                value:"W23"
-                            },
-                            {
-                                name:"S23",
-                                value:"S23"
-                            }
-                        ]}
-                        callback={(value:string) => null}
-                        // callback={(value:string) => jobsSetSelectSeason({season:value})}
-                    />
-                </div>
-                <div className={styles.dataBaseSelectorContainer}>
-                    <p className={styles.dataBaseSelectorName}>Статус</p>
-                    <BasicSelect
-                        idSelect={"statusSelect"}
-                        items={[
-                            {
-                                name:"All",
-                                value:""
-                            },
-                            {
-                                name:"New",
-                                value:"new"
-                            },
-                            {
-                                name:"Running",
-                                value:"run"
-                            },
-                            {
-                                name:"Ready",
-                                value:"ready"
-                            },
-                            {
-                                name:"Error",
-                                value:"error"
-                            },
-                        ]}
-                        callback={(value:string) => null}
-                        // callback={(value:string) => jobsSetSelectStatus({status:value})}
-                    />
-                </div>
-                <Link
-                    href={"null"}
-                    className={styles.navLink}
-                >
-                    <button className={styles.dataBaseButtonAdd}>
-                        <Image src={dataBaseButtonAddSvg} alt={""} className={styles.dataBaseButtonAddSvg}/>
-                        <p className={styles.dataBaseButtonAddText}>Новый маршрут</p>
-                    </button>
-                </Link>
+                {/*<div className={styles.dataBaseSelectorContainer}>*/}
+                {/*    <p className={styles.dataBaseSelectorName}>Сезон</p>*/}
+                {/*    <BasicSelect*/}
+                {/*        idSelect={"seasonSelect"}*/}
+                {/*        items={[*/}
+                {/*            {*/}
+                {/*                name:"All",*/}
+                {/*                value:""*/}
+                {/*            },*/}
+                {/*            {*/}
+                {/*                name:"W23",*/}
+                {/*                value:"W23"*/}
+                {/*            },*/}
+                {/*            {*/}
+                {/*                name:"S23",*/}
+                {/*                value:"S23"*/}
+                {/*            }*/}
+                {/*        ]}*/}
+                {/*        callback={(value:string) => null}*/}
+                {/*        // callback={(value:string) => jobsSetSelectSeason({season:value})}*/}
+                {/*    />*/}
+                {/*</div>*/}
+                {/*<div className={styles.dataBaseSelectorContainer}>*/}
+                {/*    <p className={styles.dataBaseSelectorName}>Статус</p>*/}
+                {/*    <BasicSelect*/}
+                {/*        idSelect={"statusSelect"}*/}
+                {/*        items={[*/}
+                {/*            {*/}
+                {/*                name:"All",*/}
+                {/*                value:""*/}
+                {/*            },*/}
+                {/*            {*/}
+                {/*                name:"New",*/}
+                {/*                value:"new"*/}
+                {/*            },*/}
+                {/*            {*/}
+                {/*                name:"Running",*/}
+                {/*                value:"run"*/}
+                {/*            },*/}
+                {/*            {*/}
+                {/*                name:"Ready",*/}
+                {/*                value:"ready"*/}
+                {/*            },*/}
+                {/*            {*/}
+                {/*                name:"Error",*/}
+                {/*                value:"error"*/}
+                {/*            },*/}
+                {/*        ]}*/}
+                {/*        callback={(value:string) => null}*/}
+                {/*        // callback={(value:string) => jobsSetSelectStatus({status:value})}*/}
+                {/*    />*/}
+                {/*</div>*/}
+                {/*<Link*/}
+                {/*    href={"null"}*/}
+                {/*    className={styles.navLink}*/}
+                {/*>*/}
+                {/*    <button className={styles.dataBaseButtonAdd}>*/}
+                {/*        <Image src={dataBaseButtonAddSvg} alt={""} className={styles.dataBaseButtonAddSvg}/>*/}
+                {/*        <p className={styles.dataBaseButtonAddText}>Новый маршрут</p>*/}
+                {/*    </button>*/}
+                {/*</Link>*/}
             </div>
             <div className={styles.dataBaseRows}>
                 <div className={styles.dataBaseRowInfo}>
@@ -258,7 +254,7 @@ const DataBaseUsers = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDele
                         className={classNames(styles.infoLabelContainer,styles.infoLabelContainerClickable)}
                         // onClick={() => jobsSetSortChangeDate()}
                     >
-                        <p className={styles.infoLabelText}>Дата регистрции</p>
+                        <p className={styles.infoLabelText}>Дата регистрации</p>
                         <Image src={dataBaseSwitcherOffSvg} alt={""} className={styles.dataBaseSwitcherSvg}/>
                         {/*{jobs.sortParam.changeDate.num === 1 && (<DataBaseSwitcherOnUp className={styles.dataBaseSwitcherOverlaySvg}/>)}*/}
                         {/*{jobs.sortParam.changeDate.num === 2 && (<DataBaseSwitcherOnDown className={styles.dataBaseSwitcherOverlaySvg}/>)}*/}

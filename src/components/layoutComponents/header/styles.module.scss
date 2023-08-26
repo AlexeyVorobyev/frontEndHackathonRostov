@@ -2,6 +2,10 @@
   background: #EBEBEB;
   padding: 17px 70px 15px 70px;
   font-family: Jost, 'sans-serif';
+  position: sticky;
+  top:0;
+  z-index: 20;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.07), 0px 7px 14px 0px rgba(65, 69, 88, 0.10);
 
   .mainWrapper {
     margin: auto;
@@ -81,6 +85,10 @@
         &:hover {
           color: #2B8ADE;
         }
+      }
+
+      .activeLink {
+        color: #2B8ADE;
       }
     }
   }

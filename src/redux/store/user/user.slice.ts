@@ -11,10 +11,10 @@ export interface userState {
 
 const initialState:userState = {
     isAuth:false,
-    permission:undefined,
+    permission:"moderator",
     name:"",
-    mail:"",
-    phone:"",
+    mail:"coolUser@yandex.ru",
+    phone:"+79184347948",
     token:""
 }
 
@@ -25,10 +25,12 @@ export const userSlice = createSlice({
         setUserData: (state, {payload}) => {
             console.log(payload)
             state.name = payload.name;
-            state.mail = payload.mail;
-            state.phone = payload.phone;
             state.token = payload.token;
-            state.permission = payload.permission
+        },
+        setUserDataNew: (state, {payload}) => {
+            state.name = payload.name;
+            state.phone = payload.phone;
+            state.mail = payload.mail
         },
         userLogIn: (state) => {
             state.isAuth = true;

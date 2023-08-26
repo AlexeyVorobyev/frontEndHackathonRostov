@@ -53,6 +53,8 @@
   }
 }
 
+$infoGridPadding:25px;
+
 .main {
   padding: 40px 70px 260px 70px;
   font-family: Jost, 'sans-serif';
@@ -60,9 +62,58 @@
   .mainWrapper {
     margin: auto;
     max-width: 1600px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: $infoGridPadding;
+  }
+
+  .container {
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.07), 0px 7px 14px 0px rgba(65, 69, 88, 0.10);
+    border-radius: 6px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    box-sizing: border-box;
+
+    .headerContainer {
+      justify-content: space-between;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding-left:$infoGridPadding;
+      padding-top:$infoGridPadding/2;
+      padding-bottom: $infoGridPadding/4;
+      padding-right: $infoGridPadding;
+
+      .header {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .containerChart {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    padding-bottom: 20px;
+
+    .diagram {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+
+      canvas {
+        max-width: 300px;
+        max-height: 300px;
+        flex-shrink:0;
+      }
+    }
   }
 }

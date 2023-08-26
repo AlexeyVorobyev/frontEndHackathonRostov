@@ -1,0 +1,146 @@
+$infoGridPadding : 25px;
+
+.wrapper {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  background-color: rgba(0,0,0,0.2);
+
+  .container {
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.07), 0px 7px 14px 0px rgba(65, 69, 88, 0.10);
+    border-radius: 6px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 50%;
+
+    .headerContainer {
+      justify-content: space-between;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding-left:$infoGridPadding;
+      padding-top:$infoGridPadding/2;
+      padding-bottom: $infoGridPadding/4;
+      padding-right: $infoGridPadding;
+
+      .header {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .form {
+      padding-left:$infoGridPadding;
+      padding-top:$infoGridPadding/2;
+      padding-bottom: $infoGridPadding;
+      padding-right: $infoGridPadding;
+
+      .title {
+        color: #2B8ADE;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .inputsContainer {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .inputContainer {
+          display: flex;
+          flex-direction:column ;
+          gap: 15px;
+
+          .inputLabel {
+            color: #2B8ADE;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+
+          .input {
+            color: #909090;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 100%;
+            height: 30px;
+            border-bottom: 2px solid #2B8ADE;
+
+            &::placeholder {
+              color: #909090;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+
+          .errorInput {
+            &::placeholder {
+              color: RED;
+            }
+          }
+        }
+
+        .textArea {
+          .input {
+            height: 200px;
+            border: 2px solid #2A7BE4;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      .outerLinksContainer {
+        margin-top: 25px;
+        display: flex;
+        gap:30px;
+        align-items: center;
+
+        .link {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .button {
+        width: 250px;
+        height: 60px;
+        flex-shrink: 0;
+        border-radius: 67px;
+        background: #2B8ADE;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .buttonText {
+          color: #FFF;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}

@@ -24,7 +24,7 @@ import {routesRawData} from "@/redux/store/routes/routes.slice";
 import {random} from "nanoid";
 import {randomInt} from "crypto";
 
-const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDeletePopupHandler:any,setIsRenderDeletePopup:any}) => {
+const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup,setIsRenderAddPopup} : {setDeletePopupHandler:Function,setIsRenderDeletePopup:Function,setIsRenderAddPopup:Function}) => {
     const DataBaseRow = ({data}: {data:Route}) => {
 
         // const [deleteJob] = useDeleteJobMutation();
@@ -68,6 +68,7 @@ const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDel
                                 }
                                 const item = {...searchRoute[0]}
                                 item.id = getRandomInt(10000);
+                                item.updatedAt = (new Date()).toLocaleString();
                                 routesAddElem({item:item})
                             }}
                         />
@@ -245,15 +246,16 @@ const DataBaseRoutes = ({setDeletePopupHandler,setIsRenderDeletePopup} : {setDel
                         // callback={(value:string) => jobsSetSelectStatus({status:value})}
                     />
                 </div>
-                <Link
-                    href={"null"}
-                    className={styles.navLink}
+                <button
+                    className={styles.dataBaseButtonAdd}
+                    onClick={() => {
+                        setIsRenderAddPopup(true);
+                        document.body.style.overflowY = "hidden";
+                    }}
                 >
-                    <button className={styles.dataBaseButtonAdd}>
-                        <Image src={dataBaseButtonAddSvg} alt={""} className={styles.dataBaseButtonAddSvg}/>
-                        <p className={styles.dataBaseButtonAddText}>Новое мероприятие</p>
-                    </button>
-                </Link>
+                    <Image src={dataBaseButtonAddSvg} alt={""} className={styles.dataBaseButtonAddSvg}/>
+                    <p className={styles.dataBaseButtonAddText}>Новое мероприятие</p>
+                </button>
             </div>
             <div className={styles.dataBaseRows}>
                 <div className={styles.dataBaseRowInfo}>

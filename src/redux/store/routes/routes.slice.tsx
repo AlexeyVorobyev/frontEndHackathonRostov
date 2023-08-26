@@ -5,6 +5,7 @@ export interface Route {
     updatedAt:string
     season:string
     status:string
+    description:string
 }
 export interface RoutesState {
     dataBase:Array<Route>
@@ -29,79 +30,90 @@ export const routesRawData:Array<Route> = [
     {
         id:1,
         name:"Путь воды",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:2,
         name:"Путь огня",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:3,
         name:"Воздух гор",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"plumbing",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:4,
         name:"Северные волки",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:5,
         name:"Корольевский завтрак",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"s23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:6,
         name:"Гигантский обрыв",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"s23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:7,
         name:"Последний заезд",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:8,
         name:"Отель - триваго",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"plumbing",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:9,
         name:"Варвара беги беги",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"s23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:10,
         name:"Кусты и шахты",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"s23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     },
     {
         id:11,
         name:"25 тысяч лет",
-        updatedAt:"someDate",
+        updatedAt:(new Date()).toLocaleString(),
         season:"w23",
         status:"working",
+        description: "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     }
 ]
 
@@ -173,6 +185,7 @@ export const routesSlice = createSlice({
                     season: item.season,
                     status: item.status,
                     updatedAt: item.updatedAt,
+                    description: item.description
                 }
                 return job;
             })
@@ -196,7 +209,9 @@ export const routesSlice = createSlice({
             newArr = newArr.map((elem:Route) => {
                 if (elem.id === payload.id) {
                     elem.name = payload.name;
-                    elem.season = payload.season
+                    elem.season = payload.season;
+                    elem.description = payload.description;
+                    elem.updatedAt = (new Date()).toLocaleString();
                     return elem
                 }
                 else return elem

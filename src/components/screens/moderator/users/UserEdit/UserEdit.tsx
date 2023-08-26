@@ -11,7 +11,7 @@ import {useRouter} from "next/navigation";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Route} from "@/redux/store/routes/routes.slice";
 
-export default function RouteEdit() {
+export default function UserEdit() {
 
     interface Inputs {
         name:string
@@ -34,14 +34,14 @@ export default function RouteEdit() {
     } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(data);
-        routesUpdateDataRoute({id:id,...data})
+        // routesUpdateDataRoute({id:id,...data})
     }
 
     React.useEffect(() => {
         let defaultValues = {
-            name:routeData.name,
-            season:routeData.season,
-            description:routeData.description
+            name:"1",
+            season:"",
+            description:""
         };
         reset({...defaultValues})
     },[id])
@@ -50,13 +50,13 @@ export default function RouteEdit() {
     return (
         <div className={classNames(styles.container,styles.containerEdit)}>
             <div className={styles.headerContainer}>
-                <p className={styles.header}>Редактирование мероприятия</p>
+                <p className={styles.header}>Редактирование пользователя</p>
             </div>
             <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-                <h1 className={styles.title}>{routeData.name}</h1>
+                <h1 className={styles.title}>{"1"}</h1>
                 <div className={styles.inputsContainer }>
                     <div className={styles.inputContainer}>
-                        <p className={styles.inputLabel}>Название</p>
+                        <p className={styles.inputLabel}>Имя</p>
                         <input
                             className={classNames(styles.input, errors.name ? styles.errorInput : "")}
                             placeholder={errors.name ? "Это поле обязательно для заполнения" : "Введите название..." }
@@ -64,10 +64,10 @@ export default function RouteEdit() {
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <p className={styles.inputLabel}>Сезон</p>
+                        <p className={styles.inputLabel}>Почта</p>
                         <input
                             className={classNames(styles.input, errors.season ? styles.errorInput : "")}
-                            placeholder={errors.season ? "Это поле обязательно для заполнения" : "Введите сезон..." }
+                            placeholder={errors.season ? "Это поле обязательно для заполнения" : "Введите почту..." }
                             {...register('season', {required:true})}
                         />
                     </div>
@@ -75,7 +75,7 @@ export default function RouteEdit() {
                         <p className={styles.inputLabel}>Описание</p>
                         <textarea
                             className={classNames(styles.input, errors.description ? styles.errorInput : "")}
-                            placeholder={errors.description? "Это поле обязательно для заполнения" : "Введите описание..." }
+                            placeholder={errors.description? "Это поле обязательно для заполнения" : "Введите ОП..." }
                             {...register('description', {required:true})}
                         />
                     </div>

@@ -2,9 +2,9 @@ import {createSlice} from "@reduxjs/toolkit";
 export interface User {
     id:number | undefined
     name:string
-    updatedAt:string
-    season:string
-    status:string
+    email:string
+    registrDate:string
+    role:string
 }
 export interface UsersState {
     dataBase:Array<User>
@@ -26,80 +26,52 @@ export interface UsersState {
 export const usersRawData:Array<User> = [
     {
         id:1,
-        name:"1",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
+        name:"Валентин Стрыкало",
+        email:"jajaBinks@yandex.ru",
+        role:"moderator",
+        registrDate:"24.11.2022",
     },
     {
         id:2,
-        name:"2",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
+        name:"Роман Стрыкало",
+        email:"jajaBinks2@yandex.ru",
+        role:"moderator",
+        registrDate:"24.11.2022",
     },
     {
         id:3,
-        name:"3",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"plumbing",
+        name:"Евпатий Коловрат",
+        email:"shoooo@yandex.ru",
+        role:"user",
+        registrDate:"24.11.2022",
     },
     {
         id:4,
-        name:"4",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
+        name:"Альберт Альбертович",
+        email:"shetzin@yandex.ru",
+        role:"user",
+        registrDate:"24.11.2022",
     },
     {
         id:5,
-        name:"5",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
+        name:"Акакий Акакиевич",
+        email:"akakkaka@yandex.ru",
+        role:"user",
+        registrDate:"24.11.2022",
     },
     {
         id:6,
-        name:"6",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
+        name:"Виктория Викторианская",
+        email:"winwin@yandex.ru",
+        role:"moderator",
+        registrDate:"24.11.2022",
     },
     {
         id:7,
-        name:"7",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
-    },
-    {
-        id:8,
-        name:"8",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"plumbing",
-    },
-    {
-        id:9,
-        name:"9",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
-    },
-    {
-        id:10,
-        name:"10",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
-    },
-    {
-        id:11,
-        name:"11dddd",
-        updatedAt:"someDate",
-        season:"w23",
-        status:"working",
+        name:"Таран Таранов",
+        email:"taran@yandex.ru",
+        role:"moderator",
+        registrDate:"24.11.2022",
     }
 ]
 
@@ -147,9 +119,9 @@ export const usersSlice = createSlice({
                 const job:User = {
                     id:item.id,
                     name: item.name,
-                    season: item.season,
-                    status: "TODO",
-                    updatedAt: item.updated_at,
+                    email:item.email,
+                    role:item.role,
+                    registrDate:item.registrDate
                 }
                 return job;
             })
